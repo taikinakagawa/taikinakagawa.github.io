@@ -129,6 +129,10 @@
     </footer>
 
     <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
         const navLinks = document.querySelectorAll('.site-nav a[data-target]');
         const contents = document.querySelectorAll('.tab-content');
 
@@ -147,14 +151,22 @@
                         content.style.display = 'none';
                     }
                 });
-
             });
         });
 
         if (window.location.hash === '#draughts') {
-            document.querySelector('.site-nav a[data-target="draughts"]').click();
+            const targetLink = document.querySelector('.site-nav a[data-target="draughts"]');
+            if (targetLink) {
+                targetLink.click();
+            }
+       
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 10);
         }
     </script>
+
 
 </body>
 </html>
