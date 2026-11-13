@@ -3,31 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>taikinakagawa</title>
+    <title>Your Name — Archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>test</h1>
-        <p>test</p>
+
+    <header class="site-header">
+        <div class="site-title">
+            <a href="index.html">YOUR NAME</a>
+        </div>
+        <nav class="site-nav">
+            <a href="#works" class="active">Works</a>
+            <a href="#chronology">Chronology</a>
+            <a href="#about">About</a>
+        </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>test1</h2>
-            <p>test1</p>
-        </section>
+    <main id="works" class="archive-grid">
+        <!-- 作品 1 -->
+        <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <!-- 仮のグレー画像（後でご自身の画像ファイル名に変更してください） -->
+                    <img src="https://placehold.co" alt="Project Title 1">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">Sometimes Making Something Leads to Nothing</h2>
+                    <p class="work-info">1997, Mexico City</p>
+                </div>
+            </a>
+        </article>
 
-        <section>
-            <h2>test3</h2>
-            <ul>
-                <li>test3</li>
-            </ul>
-        </section>
+        <!-- 作品 2 -->
+        <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co" alt="Project Title 2">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">When Faith Moves Mountains</h2>
+                    <p class="work-info">2002, Lima</p>
+                </div>
+            </a>
+        </article>
+
+        <!-- 作品 3 -->
+        <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co" alt="Project Title 3">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">The Green Line</h2>
+                    <p class="work-info">2004, Jerusalem</p>
+                </div>
+            </a>
+        </article>
+
+        <!-- 作品 4 -->
+        <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co" alt="Project Title 4">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">Children's Games</h2>
+                    <p class="work-info">1999–ongoing, Various locations</p>
+                </div>
+            </a>
+        </article>
     </main>
 
-    <footer>
-        <p>&copy; 2026 taikinakagawa. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Your Name</p>
     </footer>
+
 </body>
 </html>
