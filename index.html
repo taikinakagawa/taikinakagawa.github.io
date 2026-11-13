@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Archive</title>
+    <title>taikinakagawa — archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,42 +12,40 @@
         <div class="site-title">
             <a href="index.html">there</a>
         </div>
+
         <nav class="site-nav">
-            <a href="#works" class="active">Works</a>
-            <a href="#chronology">Chronology</a>
-            <a href="#about">About</a>
+            <a href="#draughts" data-target="draughts">draughts</a>
+            <a href="#works" data-target="works" class="active">works</a>
+            <a href="about/">about</a>
+            <a href="contact/">contact</a>
         </nav>
     </header>
 
-    <main id="works" class="archive-grid">
-        <!-- 作品 1 -->
+    <main id="works" class="archive-grid tab-content">
         <article class="work-item">
-            <a href="work-detail.html">
+            <a href="works/work1/index.html">
                 <div class="thumbnail-wrapper">
-                    <!-- 仮のグレー画像（後でご自身の画像ファイル名に変更してください） -->
-                    <img src="https://placehold.co" alt="Project Title 1">
+                    <img src="images/11.2025.jpg" alt="Project Title 1">
                 </div>
                 <div class="work-meta">
-                    <h2 class="work-title">Sometimes Making Something Leads to Nothing</h2>
-                    <p class="work-info">1997, Mexico City</p>
+                    <h2 class="work-title">Sometimes Nothing</h2>
+                    <p class="work-info">207, City</p>
                 </div>
             </a>
         </article>
 
-        <!-- 作品 2 -->
         <article class="work-item">
-            <a href="work-detail.html">
+            <a href="works/work2/">
                 <div class="thumbnail-wrapper">
                     <img src="https://placehold.co" alt="Project Title 2">
                 </div>
                 <div class="work-meta">
-                    <h2 class="work-title">When Faith Moves Mountains</h2>
-                    <p class="work-info">2002, Lima</p>
+                    <h2 class="work-title">When Mountains</h2>
+                    <p class="work-info">202, Test</p>
                 </div>
             </a>
         </article>
 
-        <!-- 作品 3 -->
         <article class="work-item">
             <a href="work-detail.html">
                 <div class="thumbnail-wrapper">
@@ -55,28 +53,108 @@
                 </div>
                 <div class="work-meta">
                     <h2 class="work-title">The Green Line</h2>
-                    <p class="work-info">2004, Jerusalem</p>
+                    <p class="work-info">204, Test</p>
                 </div>
             </a>
         </article>
 
-        <!-- 作品 4 -->
         <article class="work-item">
             <a href="work-detail.html">
                 <div class="thumbnail-wrapper">
                     <img src="https://placehold.co" alt="Project Title 4">
                 </div>
                 <div class="work-meta">
-                    <h2 class="work-title">Children's Games</h2>
-                    <p class="work-info">1999–ongoing, Various locations</p>
+                    <h2 class="work-title">Games</h2>
+                    <p class="work-info">2000–ongoing, Various locations</p>
                 </div>
             </a>
         </article>
+
+
     </main>
 
+    <section id="draughts" class="archive-grid tab-content" style="display: none;">
+        <article class="work-item">
+            <a href="draughts/draught1/">
+                <div class="thumbnail-wrapper">
+                    <img src="images/11.2025.jpg" alt="Draught 1">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">Walk #01</h2>
+                    <p class="work-info">2025, Sketch / Notes</p>
+                </div>
+            </a>
+        </article>
+
+        <article class="work-item">
+            <a href="draughts/draught2/">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co?text=Draught+02" alt="Draught 2">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">Proposal</h2>
+                    <p class="work-info">2024, Drawing</p>
+                </div>
+            </a>
+        </article>
+                <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co" alt="Draught 3">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">The Red Line</h2>
+                    <p class="work-info">2014, South</p>
+                </div>
+            </a>
+        </article>
+
+        <article class="work-item">
+            <a href="work-detail.html">
+                <div class="thumbnail-wrapper">
+                    <img src="https://placehold.co" alt="Draught 4">
+                </div>
+                <div class="work-meta">
+                    <h2 class="work-title">Children's</h2>
+                    <p class="work-info">2000–ongoing, Various locations</p>
+                </div>
+            </a>
+        </article>
+
+    </section>
+
+
     <footer class="site-footer">
-        <p>&copy; 2026 Your Name</p>
+        <p>&copy; 2026 taikinakagawa</p>
     </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.site-nav a[data-target]');
+        const contents = document.querySelectorAll('.tab-content');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+
+                const targetId = link.getAttribute('data-target');
+                contents.forEach(content => {
+                    if (content.id === targetId) {
+                        content.style.display = content.classList.contains('archive-grid') ? 'grid' : 'block';
+                    } else {
+                        content.style.display = 'none';
+                    }
+                });
+
+            });
+        });
+
+        if (window.location.hash === '#draughts') {
+            document.querySelector('.site-nav a[data-target="draughts"]').click();
+        }
+    </script>
 
 </body>
 </html>

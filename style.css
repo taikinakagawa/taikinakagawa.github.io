@@ -24,22 +24,25 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 60px;
+    margin-top: -25px;
+    margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #eeeeee;
 }
 
 .site-title a {
-    font-size: 16px;
+    font-size: 23px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
+    margin-left: -25px;
 }
 
 .site-nav {
     display: flex;
-    gap: 28px;
+    gap: 18px;
     font-size: 14px;
     color: #777777;
+    margin-right: -25px;
 }
 
 .site-nav a:hover,
@@ -52,6 +55,7 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 50px 32px; /* 縦の余白50px、横の余白32px */
+    margin-top: 45px;
 }
 
 .work-item a {
@@ -68,6 +72,7 @@ a {
 }
 
 .thumbnail-wrapper img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -101,7 +106,149 @@ a {
     color: #999999;
 }
 
-/* スマートフォン向けの余白調整 */
+/* works 詳細ページ（中央寄せ・ゆったりしたレイアウト） */
+.work-detail {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.work-detail img {
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
+}
+
+/* draughts 詳細ページ（少し幅を狭め、ラベルやメモ風のスタイルを適用） */
+.draught-detail {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.draught-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: #888888;
+    display: block;
+    margin-bottom: 8px;
+}
+.draught-note {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 24px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444444;
+}
+.draught-entry img {
+    width: 100%;
+    height: auto;
+}
+.draught-entry figcaption {
+    font-size: 12px;
+    color: #777777;
+    margin-top: 8px;
+}
+
+/* =========================================
+   About / Chronology テキストページ用スタイル
+   ========================================= */
+.text-page {
+    max-width: 640px;
+    margin-top: 60px;
+}
+
+/* 名前（h1: taikinakagawa） */
+.bio-section h1 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+/* 生年（p: b.2000） */
+.bio-section p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777777;
+    margin-bottom: 45px;
+}
+
+.cv-section h1 {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+/* 経歴リスト（ul / li） */
+.cv-section ul {
+    list-style: none;
+    margin-bottom: 50px;
+}
+
+.cv-section li {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+/* リスト内の年号（strong: 202X） */
+.cv-section li strong {
+    font-weight: 500;
+    color: #111111;
+}
+
+/* Contact 見出し（h2） */
+.contact-section h2 {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+/* Contact 本文・メールアドレス */
+.contact-section p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+}
+
+.contact-section a {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+}
+
+.contact-section a:hover {
+    border-color: #111111;
+}
+
+.detail-back {
+    margin-top: 95px; /* 解説文（detail-description）から大きく離して独立させる */
+    margin-left: -120px;
+    text-align: left; /* 左揃えを明示 */
+}
+
+.detail-back a {
+    display: inline-block;
+    font-size: 13px;       /* 本文より少し小さくして機能リンクとして区別する */
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #888888;        /* 通常時は少し薄めのグレー（濃度調整はここを変更） */
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* マウスを乗せた（ホバーした）時の変化 */
+.detail-back a:hover {
+    color: #111111;        /* 黒く濃くしてクリックできることを明確にする */
+    transform: translateX(-4px); /* 矢印の方向に4pxだけスッと左に動く演出 */
+}
+
+/* スマートフォン向けの余白調整（上書きが効くよう一番下に配置） */
 @media (max-width: 600px) {
     body {
         padding: 25px 20px;
