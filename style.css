@@ -26,8 +26,7 @@ a {
     align-items: baseline;
     margin-top: -25px;
     margin-bottom: 20px;
-    padding-bottom: 15px;
-    padding-left: 15px; 
+    padding-bottom: 15px; 
     border-bottom: 1px solid #eeeeee;
 }
 
@@ -36,6 +35,7 @@ a {
     font-weight: 500;
     letter-spacing: 0.06em;
     margin-left: -25px;
+    padding-left: 20px;
 }
 
 .site-nav {
@@ -258,6 +258,10 @@ a {
         flex-direction: column;
         gap: 15px;
         margin-bottom: 40px;
+        padding-top: 10px;
+    }
+    .site-nav {
+        margin-top: -8px;
     }
     .archive-grid {
         grid-template-columns: 1fr;
